@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+
+
+img {
+
+margin: 10px;
+position: relative;
+z-index: 1;
+}
+
+.btn-group button {
+  background-color: black; /* Green background */
+
+color: white; /* White text / padding: 10px 24px; / Some padding / cursor: pointer; / Pointer/hand icon / float: left; / Float the buttons side by side */ }
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: black;
+}
+
+/* Header/Logo Title */
+
+/* Page Content */
+
+</style>
+
+<body>
+
+<style>
+    .game {
+        position: absolute;
+color: black;
+
+transform: scale(1.8);
+  z-index: 3;
+  font-family: Arial, Helvetica, sans-serif;
+    }
+    .fade {
+        position: absolute;
+        background: black(to bottom, #1d1d1d, #1d1d1d5d, black
+(39, 39, 39, 0));
+        width: 300px;
+        height: 150px;
+     border-radius: 15px;
+    }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 85vw;
+  margin: 1rem auto;
+}
+
+.bg,
+.overlay {
+  text-align: center;
+}
+
+img,
+.overlay {
+  transition: .3s all;
+  border-radius: 3px;
+}
+
+.day {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color:black;
+  position: relative;
+z-index: 1;
+}
+
+.bubbles{
+  position: fixed;
+  width:100%;
+  height: 100%;
+  z-index: 0;
+  overflow:hidden;
+  top:0;
+  left:0;
+}
+.bubble{
+  position: absolute;
+  bottom:-100px;
+  width:40px;
+  height: 40px;
+  background: black(to top right, #c68324, #bd0d0d5d);
+  border-radius:50%;
+  opacity:0.5;
+  animation: rise 10s infinite ease-in;
+}
+.bubble:nth-child(1){
+  width:40px;
+  height:40px;
+  left:10%;
+  animation-duration:8s;
+}
+.bubble:nth-child(2){
+  width:20px;
+  height:20px;
+  left:20%;
+  animation-duration:5s;
+  animation-delay:1s;
+}
+.bubble:nth-child(3){
+  width:50px;
+  height:50px;
+  left:35%;
+  animation-duration:7s;
+  animation-delay:2s;
+}
+.bubble:nth-child(4){
+  width:80px;
+  height:80px;
+  left:50%;
+  animation-duration:11s;
+  animation-delay:0s;
+}
+.bubble:nth-child(5){
+  width:35px;
+  height:35px;
+  left:55%;
+  animation-duration:6s;
+  animation-delay:1s;
+}
+.bubble:nth-child(6){
+  width:45px;
+  height:45px;
+  left:65%;
+  animation-duration:8s;
+  animation-delay:3s;
+}
+.bubble:nth-child(7){
+  width:90px;
+  height:90px;
+  left:70%;
+  animation-duration:12s;
+  animation-delay:2s;
+}
+.bubble:nth-child(8){
+  width:25px;
+  height:25px;
+  left:80%;
+  animation-duration:6s;
+  animation-delay:2s;
+}
+.bubble:nth-child(9){
+  width:15px;
+  height:15px;
+  left:70%;
+  animation-duration:5s;
+  animation-delay:1s;
+}
+.bubble:nth-child(10){
+  width:90px;
+  height:90px;
+  left:25%;
+  animation-duration:10s;
+  animation-delay:4s;
+}
+@keyframes rise{
+  0%{
+    bottom:-100px;
+    transform:translateX(0);
+  }
+  50%{
+    transform:translate(100px);
+  }
+  100%{
+    bottom:1080px;
+    transform:translateX(-200px);
+  }
+}
+
+.hello img {
+            width: 100%;
+            transition: 0.5s all ease-in-out;
+        }
+
+    .hello:hover img {
+      transform-origin: top;
+        transform: scale(1.1);
+    }
+</style>
+<style>
+  .topnav {
+  overflow: hidden;
+  position: fixed;
+  z-index: 5;
+  display: none;
+  border-radius: 30px;
+  background-color: #333;
+}
+
+p {
+  transition: 0.5s;
+}
+
+.topnav p {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+
+padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.ImageForGame {
+  border-radius: 15px;
+   width: 180px;
+opacity: 0;
+
+height: 180px;
+  transition: 0.5s;
+  box-shadow: 5px 5px 5px 5px black(13, 13, 13, 0.725);
+
+}
+.ImageForGame:hover{
+  transform: scale(1.1);
+  box-shadow: 2px 2px 2px 2px black(79, 79, 79, 0.725);
+
+} @keyframes scroll { from {top: -0%;} to {top: -50%;} } @keyframes scroll2 { from {top: -50%;} to {top: -0%;} } /* Webkit based browsers (Chrome, Safari) / ::-webkit-scrollbar { width: 10px; / Adjust the width as needed */ }
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black(146, 145, 145); /* Adjust the color and opacity as needed */
+  border-radius: 20px;
+}
+
+/* Firefox */
+body {
+
+}
+::-moz-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+}
+
+::-moz-scrollbar-track {
+  background-color: transparent;
+}
+::-moz-scrollbar-thumb {
+  background-color: black(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
+}
+
+/* Hide default scrollbar track */
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-corner,
+::-moz-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+@keyframes OpenLang {
+  0% {transform: translate(-50%, -50%)  scale(0.3); opacity: 0;}
+  50% {transform: translate(-50%, -50%) scale(1.2); opacity: 1;}
+  100% {transform: translate(-50%, -50%) scale(1.0); opacity: 1;}
+}
+@keyframes CloseLang {
+  0% {transform: translate(-50%, -50%)  scale(1.0); opacity: 1;}
+  50% {transform: translate(-50%, -50%)  scale(1.2); opacity: 1;}
+  100% {transform: translate(-50%, -50%) scale(0.3); opacity: 0;}
+}
+.openLang {
+  animation: OpenLang 0.8s;
+  transform-origin: center;
+
+}
+.closeLang {
+  animation: CloseLang 0.8s;
+  transform-origin: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+</style>
+
+
+<script>
+  var IsOpenLang = false
+  function ToggleLang() {
+    if(IsOpenLang===false) {
+      document.getElementById('LangSelect').style.opacity = 1
+      document.getElementById('LangSelect').classList.add('openLang')
+      document.getElementById('LangSelect').style.visibility = "visible"
+      setTimeout(() => {
+        document.getElementById('LangSelect').classList.remove('openLang')
+        IsOpenLang = true
+      }, 800);
+
+}
+else if(IsOpenLang===true) {
+  document.getElementById('LangSelect').style.opacity = 0
+
+  document.getElementById('LangSelect').style.visibility = "hidden"
+
+  setTimeout(() => {
+    IsOpenLang = false
+
+
+
+  }, 810);
+
+}
+}
+
+var myElement = document.getElementById("TopMenu"); // Get the element
+  var Isscrolled = false;
+window.addEventListener("scroll", function() { // Add a scroll event listener
+  if (window.pageYOffset > 350) { // Check if the user has scrolled 100 pixels down the page
+    if(Isscrolled===false) {
+    myElement.style.animation = "scroll 0.8s"; // Hide the element
+    myElement.style.top = "-50%"
+    Isscrolled = true
+    //console.log("its false")
+    } else {
+      Isscrolled = true
+    }
+  } else  if (window.pageYOffset < 350) {
+    if(Isscrolled===true) {
+      //console.log("its true")
+      myElement.style.animation = "scroll2 0.3s"; // Hide the element
+      myElement.style.top = "-0%"
+      Isscrolled=false
+    } else {
+      Isscrolled=false
+
+}
+}
+
+});
+
+</script>
+
+<style>
+  @keyframes menuM {
+    0% {border: solid black 3px;}
+    50% {border: solid black(13, 13, 13) 3px;}
+    100% {border: solid black 3px;}
+  }
+
+.MenuIt {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+
+color: #000;
+
+transition: 0.8s;
+}
+
+.MenuIt:hover {
+  background-color: #565656;
+  border-radius: 30px;
+  transform: translateY(-5px)
+}
+
+@keyframes SLMenu {
+  from{right: 0; opacity: 1;}
+  to{right: -310px; opacity: 0;}
+}
+
+@keyframes SLMenu2 {
+  from{right: -310px; opacity: 0;}
+  to{right: -0px; opacity: 1;}
+}
+
+.SlSlide {
+  animation: SLMenu 0.8s !important;
+}
+
+.SlSlideIn {
+  animation: SLMenu2 0.8s !important;
+}
+
+</style>
+
+<div id="SideMenuBigScreen" style="transition: 0.8s; display: none; position: fixed; z-index: 91; background-color: #1d1d1d7b; width: 100%; height: 100%;">
+
+<div  style="display: none;  position: absolute; overflow-x: hidden; overflow-y: auto; animation: menuM 7s infinite; transition: 0.5s; right: 0px; border: solid gray 3px;  border-radius: 15px 0px 0px 15px; width: 300px; height: 100%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
+    <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 15px; right: 0; color: white;  position: absolute;">  
+
+  menu
+
+  </span>
+<div style="position: relative; top: 15px;">
+  <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: absolute; top: -15px; height: 30px; width: 30px;" />
+  <h1 style="color: white; font-size: larger; top: 2px;  position: relative; left: 55px; font-family: Arial, Helvetica, sans-serif; ">El.insano</h1>
+</div>
+
+<div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+  <a style="text-decoration: none;" href="./index.html">
+    <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Home</h1>
+  </a>
+
+</div>
+
+<div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+</div>
+
+
+<div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+
+
+</div>
+
+
+<!--div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+
+    <h1 style=" cursor: not-allowed;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: rgba(255, 255, 255, 0.597);  font-family: Arial, Helvetica, sans-serif; position: relative;">Apps</h1>
+
+
+</div-->
+
+<div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+
+</div>
+</div>
+</div>
+
+<span onclick="ToggleLang()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: larger; top: 10%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
+
+.-.
+
+  </span>
+
+<p style="float: left; top: 5%; position: relative; margin-left: 15px; color: white;"> ANDY :) </p>
+
+<div style="top: 17%; left: 8px; width: 95%; border-radius: 10px; position: relative; height: 2px; background-color: #3d3d3d;">
+
+</div>
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" id="googletranslateelement"></div>
+
+<script>
+
+  // Make a request to the geolocation API to retrieve the user's country
+  fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+      var userCountryCode = data.country;
+
+      // Check if the user's country is different from the desired country
+      if (userCountryCode !== 'US') {
+        // Display the specific element for users in a different country
+        console.log('isNot')
+        IsOpenLang=true
+        var element = document.getElementById('LangSelect');
+        element.style.visibility = 'visible'
+      } else {
+        console.log('us')
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+
+
+
+
+  var ToggledMenu3 = false;
+
+  function ToggleMenuBig() {
+    if(ToggledMenu3===false) {
+      document.getElementById('SideMenuBigScreen').style.display = 'block'
+      document.getElementById('SideMenuBigScreen').style.opacity = 1
+
+      document.getElementById('MMenuBig').style.display = 'block'
+
+      document.getElementById('MMenuBig').classList.add('SlSlideIn')
+
+      setTimeout(() => {
+        document.getElementById('MMenuBig').classList.remove('SlSlideIn')
+
+
+        ToggledMenu3 = true
+      }, 800);
+
+    } else if(ToggledMenu3===true) {
+
+      ToggledMenu3 = false
+
+
+      document.getElementById('SideMenuBigScreen').style.opacity = 0
+
+      document.getElementById('MMenuBig').classList.add('SlSlide')
+      setTimeout(() => {
+        document.getElementById('MMenuBig').classList.remove('SlSlide')
+        document.getElementById('MMenuBig').style.display = 'none'
+        document.getElementById('SideMenuBigScreen').style.display = 'none'
+      }, 800);
+    }
+  }
+</script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      excluded: '.notranslate',
+
+},  'google_translate_element');
+}
+  </script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script>
+    var Debug = false;
+
+if(Debug) {
+  const LCP_SUB_PARTS = [
+    'Time to first byte',
+    'Resource load delay',
+    'Resource load time',
+    'Element render delay',
+  ];
+
+new PerformanceObserver((list) => {
+  const lcpEntry = list.getEntries().at(-1);
+  const navEntry = performance.getEntriesByType('navigation')[0];
+  const lcpResEntry = performance
+    .getEntriesByType('resource')
+    .filter((e) => e.name === lcpEntry.url)[0];
+
+    // Ignore LCP entries that aren't images to reduce DevTools noise.
+    // Comment this line out if you want to include text entries.
+    if (!lcpEntry.url) return;
+
+    // Compute the start and end times of each LCP sub-part.
+    // WARNING! If your LCP resource is loaded cross-origin, make sure to add
+    // the `Timing-Allow-Origin` (TAO) header to get the most accurate results.
+    const ttfb = navEntry.responseStart;
+    const lcpRequestStart = Math.max(
+      ttfb,
+      // Prefer `requestStart` (if TOA is set), otherwise use `startTime`.
+      lcpResEntry ? lcpResEntry.requestStart || lcpResEntry.startTime : 0
+    );
+    const lcpResponseEnd = Math.max(
+      lcpRequestStart,
+      lcpResEntry ? lcpResEntry.responseEnd : 0
+    );
+    const lcpRenderTime = Math.max(
+      lcpResponseEnd,
+      // Use LCP startTime (which is the final LCP time) as sometimes
+      // slight differences between loadTime/renderTime and startTime
+      // due to rounding precision.
+      lcpEntry ? lcpEntry.startTime : 0
+    );
+
+    // Clear previous measures before making new ones.
+    // Note: due to a bug this does not work in Chrome DevTools.
+    LCP_SUB_PARTS.forEach((part) => performance.clearMeasures(part));
+
+    // Create measures for each LCP sub-part for easier
+    // visualization in the Chrome DevTools Performance panel.
+    const lcpSubPartMeasures = [
+      performance.measure(LCP_SUB_PARTS[0], {
+        start: 0,
+        end: ttfb,
+      }),
+      performance.measure(LCP_SUB_PARTS[1], {
+        start: ttfb,
+        end: lcpRequestStart,
+      }),
+      performance.measure(LCP_SUB_PARTS[2], {
+        start: lcpRequestStart,
+        end: lcpResponseEnd,
+      }),
+      performance.measure(LCP_SUB_PARTS[3], {
+        start: lcpResponseEnd,
+        end: lcpRenderTime,
+      }),
+    ];
+
+    // Log helpful debug information to the console.
+    console.log('LCP value: ', lcpRenderTime);
+    console.log('LCP element: ', lcpEntry.element, lcpEntry.url);
+    console.table(
+      lcpSubPartMeasures.map((measure) => ({
+        'LCP sub-part': measure.name,
+        'Time (ms)': measure.duration,
+        '% of LCP': `${
+          Math.round((1000 * measure.duration) / lcpRenderTime) / 10
+        }%`,
+      }))
+    );
+  }).observe({type: 'largest-contentful-paint', buffered: true});
+}
+
+function openFade(element2) {
+var element = document.getElementById(element2)
+element.style.transition = '0.5s'
+element.style.visibility = 'visible'
+
+element.style.opacity = 1
+}
+
+function closeFade(element2) {
+    var element = document.getElementById(element2)
+    element.style.transition = '0.5s'
+    element.style.opacity = 0
+    setTimeout(() => {
+      element.style.visibility = 'hidden'
+    }, 500);
+  }
+
+</script>
+
+</div>
+
+<style>
+
+.header-waltah {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+.header-east {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+.header-shock {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+.header-AMeme {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+.header-Tsp {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background: rgba(172, 157, 157, 0);
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+.header-chip {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background: rgba(172, 157, 157, 0);
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/chip.gif?raw=true");
+  background-position-y: 10px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+</style>
+
+<script>
+  console.log('eee')
+ 
+</script>
+
+<!--div class="hello" style=" margin-right: auto; margin-left: auto; width: 430px;">
+  <a href="https://sites.google.com/view/fnf-unblockedhehe/home">
+      <p class="game" style="left: 105px;" >Infinite Tower</p>
+      <div class="fade" ></div>
+   <img style="border-radius: 15px; width: 400px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/fn.png?raw=true" alt="game">
+  </a>
+
+</div-->
+<style>
+  .inputbox {
+  position: relative;
+  width: 196px;
+  z-index: 6;
+  left: 50%;
+  transform: translate(-50%, -0%);
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox label {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #ffffff;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~label,
+.inputbox input:focus ~label {
+  color: #ffffff;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0,75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #3d3d3d;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+  height: 44px;
+}
+
+@keyframes show {
+  from {
+    transform: scale(1.3);
+    opacity: 0 !important;
+  }
+
+to {
+    transform: scale(1.0);
+    opacity: 1 !important;
+  }
+}
+
+.box {
+
+opacity: 0;
+  transition: 0.5s;
+}
+
+.show {
+  animation: show 0.5s;
+  opacity: 1 !important;
+}
+
+.showIMG {
+  opacity: 1 !important;
+}
+
+</style>
+
+<br>
+
+<div id="games">
+
+<div class="box" id="Infinite Tower" style="position: relative; float: left; ">
+
+</div>
+
+<div class="box" id="Tunnel Rush" style="position: relative; float: left;">
+  <a href="https://elinsano-v2.github.io/home/El.insano-v2-CHATGPT/GPT.html">
+
+  <!--p class="game" >Tunnel Rush</p>
+  <div class="fade" ></div-->
+<img fetchpriority="low" class="ImageForGame" data-src="https://qph.cf2.quoracdn.net/main-thumb-ti-3620999-200-pdgywsvenbspkntbxjdxfzplgeoopamo.jpeg" alt="game">
+   <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgb(255, 255, 255) !important;">GPT-GOD</div>
+  </a>
+
+</div>
+</div>
+
+<style>
+  @keyframes medal {
+    0% { left: -500px;}
+    20% {left: -1px;}
+    50% {left: -1px;}
+    70% {left: -1px;}
+    90% {opacity: 1;left: -1px;}
+    100% {opacity: 0; left: -500px;}
+  }
+
+</style>
+
+<!--div id="medall" style="opacity: 0;  margin-left: 1px;  animation-duration: 15s; transition: 0.5s; position: fixed; z-index: 5; box-shadow: 12px 12px #39393963; top: 10%; border-radius: 0px 25px 25px 0px; width: 300px; height: 150px; background-color: #1d1d1d;">
+<h2 id="okf" style="margin-left: 50px; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">Medal Earned!</h2>
+<h2  id="namemed" style=" margin-left: 0px; color: white;">Afk</h2>
+<p  id="meddle" style=" color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Stayed On The Home Page For 5 minutes.</p>
+</div-->
+
+<!--script>
+  var afkk = document.getElementById('afkk')
+  var firststeps = document.getElementById('first-steps')
+  var afkpr = false;
+
+var firstt = false;
+
+afkk.style.color = "#595959";
+var Name = document.getElementById('namemed');
+   var description = document.getElementById('meddle');
+   var medd = document.getElementById('medall');
+   setInterval(displayHello, 1000);
+
+function displayHello() {
+   if (localStorage.clickcount) {
+    afkk.style.color = 'white';
+} else {
+
+afkk.style.color = "#595959";
+  //localStorage.clickcount = 1;
+}
+   }
+  setTimeout(() => {
+
+afkk.style.color = 'white';
+Name.innerHTML = "Afk";
+
+localStorage.clickcount = 1;
+
+description. innerHTML = "Stayed On The Home Page For 5 minutes.";
+   medd.style.opacity = 1;
+    medd.style.animation = 'medal 15s';
+    setTimeout(() => {
+
+medd.style.opacity = 0;
+
+}, 15000);
+  }, 300000);
+
+</script-->
+
+
+    
+    
+
+
+
+<section class="sticky">
+  <div class="star">
+      <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+<script>
+  const container = document.getElementById('games');
+const boxes = document.querySelectorAll('.box');
+
+// Check if an element is in the viewport
+function isElementInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+
+rect.left >= 0 &&
+rect.bottom <= (window.innerHeight + 400 || document.documentElement.clientHeight) &&
+rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+);
+}
+
+// Function to handle scroll event
+function handleScroll() {
+  const hiddenDivs = document.querySelectorAll('.box');
+  const lazyImages = document.querySelectorAll('.ImageForGame');
+
+lazyImages.forEach(image => {
+    if (isElementInViewport(image) && !image.src) {
+      image.src = image.getAttribute('data-src');
+      image.onload = function() {
+
+    image.classList.add('showIMG');
+
+    console.log('Loaded Game')
+  };
+}
+});
+
+hiddenDivs.forEach(div => {
+    if (isElementInViewport(div)) {
+      div.classList.add('show');
+      console.log('Loaded Game')
+    }
+  });
+}
+var preloaded = false
+function searchHandleLoad() {
+  const hiddenDivs = document.querySelectorAll('.box');
+  const lazyImages = document.querySelectorAll('.ImageForGame');
+  if(preloaded===false) {
+  lazyImages.forEach(image => {
+
+  image.src = image.getAttribute('data-src');
+  image.onload = function() {
+    image.classList.add('showIMG');
+
+  }
+});
+  hiddenDivs.forEach(div => {
+
+  div.classList.add('show');
+});
+  console.log('Loaded')
+  preloaded = true
+} else if (preloaded===true) {
+  console.log('Already Loaded')
+}
+}
+
+// Attach scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+document.addEventListener('DOMContentLoaded', handleScroll);
+
+// Trigger initial check on page load
+handleScroll();
+
+var input, filter, elements, element, i;
+  input = document.getElementById("SearchBox");
+  filter = input.value.toUpperCase();
+  elements = document.getElementById("games");
+  element = elements.getElementsByTagName("div");
+
+function Search() {
+    filter = input.value.toUpperCase();
+     input.addEventListener("input", function() {
+      if (input.value.length > 0) {
+        for (i = 0; i < element.length; i++) {
+          var id = element[i].getAttribute("id");
+          if (id && id.toUpperCase().indexOf(filter) > -1) {
+            element[i].style.display = "";
+
+        searchHandleLoad()
+
+
+      } else {
+        element[i].style.display = "none";
+      }
+    }
+  } else {
+    for (var i = 0; i < element.length; i++) {
+
+      element[i].style.display = "block";
+
+    }
+
+  }
+});
+}
+var usingLoad = false
+
+function loadGame() {
+  if(usingLoad===true){
+
+}
+}
+
+</script>
+
+<!--div class="bubbles" style="  filter: drop-shadow(0 0 10px white);" >
+  <div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+<div class="snow"></div>
+  </div-->
+</section>
+
+</body>
+
+<script>
+
+/*
+    firststeps.style.color = "#595959";
+    setInterval(displayHelloo, 1000);
+
+function displayHelloo() {
+if (localStorage.clickcountt) {
+firststeps.style.color = 'white';
+
+} else {
+helloo();
+firststeps.style.color = "#595959";
+//localStorage.clickcount = 1;
+}
+}
+
+  function helloo() {
+    Name.innerHTML = "First Steps";
+description.innerHTML = "Opened The Site For The First Time, Have Fun!.";
+   medd.style.opacity = 1;
+    medd.style.animation = 'medal 15s';
+    setTimeout(() => {
+
+medd.style.opacity = 0;
+
+}, 15000);
+                    localStorage.clickcountt = 00001;
+      }
+      */
+
+</script>
+</html>

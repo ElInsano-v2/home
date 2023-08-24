@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    margin: 0; /* Eliminar el margen predeterminado */
+    padding: 0; /* Eliminar el relleno predeterminado */
+}
+
+/* Resto de tus estilos aquí */
+img {
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-group button {
+    background-color: black;
+    color: white;
+    /* Resto de tus estilos de botón aquí */
+}
+
+/* Resto de tus estilos aquí */
